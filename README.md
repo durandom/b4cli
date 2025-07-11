@@ -392,7 +392,7 @@ After downloading the template files, rename everything with one simple command:
 
 ```bash
 # Set your CLI name
-NEW_NAME="sidekick"
+NEW_NAME="mycli"
 
 # Download and extract the template, then rename it
 curl -L https://github.com/durandom/b4cli/archive/main.tar.gz | tar -xz
