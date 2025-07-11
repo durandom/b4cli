@@ -17,6 +17,7 @@ A modern Python CLI application template built with best practices, featuring Ty
 - [CLI Architecture](#cli-architecture)
 - [Testing](#testing)
 - [Customization Guide](#customization-guide)
+- [🚀 Template Setup Commands](#-template-setup-commands)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -39,11 +40,52 @@ B4CLI is a production-ready Python CLI application template that provides a soli
 
 ### Using This Template
 
-1. **Clone or fork this repository**:
+Choose one of these methods to get the template files:
+
+#### Option 1: Download Archive (Recommended)
+```bash
+# Download and extract template files without git history
+curl -L https://github.com/your-org/b4cli/archive/main.tar.gz | tar -xz
+mv b4cli-main my-new-cli
+cd my-new-cli
+
+# Initialize your own git repository
+git init
+```
+
+#### Option 2: Use degit (Clean Template)
+```bash
+# Install degit if you don't have it
+npm install -g degit
+
+# Download template files without git history
+degit your-org/b4cli my-new-cli
+cd my-new-cli
+
+# Initialize your own git repository
+git init
+```
+
+#### Option 3: GitHub Template (Web Interface)
+1. Go to [github.com/your-org/b4cli](https://github.com/your-org/b4cli)
+2. Click the **"Use this template"** button
+3. Create a new repository from the template
+4. Clone your new repository:
    ```bash
-   git clone https://github.com/your-org/b4cli.git my-new-cli
-   cd my-new-cli
+   git clone https://github.com/your-username/your-new-cli.git
+   cd your-new-cli
    ```
+
+#### Option 4: Git Archive (Command Line)
+```bash
+# Download just the files without git history
+git archive --remote=https://github.com/your-org/b4cli.git main | tar -x
+# Or if the above doesn't work:
+git clone --depth 1 https://github.com/your-org/b4cli.git my-new-cli
+cd my-new-cli
+rm -rf .git
+git init
+```
 
 2. **Install dependencies**:
    ```bash
@@ -126,9 +168,8 @@ To customize this template for your own CLI application:
 ### Installation
 
 ```bash
-# Clone the repository
-git clone https://github.com/your-org/b4cli.git
-cd b4cli
+# After downloading template files (see Quick Start above)
+cd your-cli-directory
 
 # Install dependencies including development tools
 uv sync --group dev
@@ -342,6 +383,25 @@ This project is licensed under the Creative Commons Attribution-NonCommercial 4.
 - ❌ **Selling**: Cannot sell the software or derivative works
 
 See the [LICENSE](LICENSE) file for details or visit [https://creativecommons.org/licenses/by-nc/4.0/](https://creativecommons.org/licenses/by-nc/4.0/).
+
+## 🚀 Template Setup Commands
+
+### Quick Template Setup Script
+
+After downloading the template files, rename everything with one simple command:
+
+```bash
+# Set your CLI name
+NEW_NAME="mycli"
+
+curl -L https://github.com/durandom/b4cli/archive/main.tar.gz | tar -xz
+mv b4cli-main $NEW_NAME && cd $NEW_NAME && git init
+# Rename everything in 3 commands
+find . -name "*b4cli*" -exec rename 's/b4cli/'$NEW_NAME'/g' {} + 2>/dev/null || \
+find . -name "*b4cli*" | while read f; do mv "$f" "${f//b4cli/$NEW_NAME}"; done
+find . -type f \( -name "*.py" -o -name "*.md" -o -name "*.toml" \) -exec sed -i "s/b4cli/$NEW_NAME/g" {} +
+uv sync --group dev && uv run $NEW_NAME --help
+```
 
 ---
 
