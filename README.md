@@ -392,16 +392,16 @@ After downloading the template files, rename everything with one simple command:
 
 ```bash
 # Set your CLI name
-NEW_NAME="mycli"
+NEW_NAME="sidekick"
 
 # Download and extract the template, then rename it
 curl -L https://github.com/durandom/b4cli/archive/main.tar.gz | tar -xz
-mv b4cli-main $NEW_NAME && cd $NEW_NAME && git init
+mv b4cli-main $NEW_NAME && cd $NEW_NAME
 
 # Rename everything in 3 commands
 find . -name "*b4cli*" | while read f; do mv "$f" "${f//b4cli/$NEW_NAME}"; done
 find . -type f \( -name "*.py" -o -name "*.md" -o -name "*.toml" \) -exec sed -i '' "s/b4cli/$NEW_NAME/g" {} +
-uv sync --group dev
+uv sync --group dev && uv run $NEW_NAME --help
 ```
 
 ---
