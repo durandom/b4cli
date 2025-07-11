@@ -1,5 +1,5 @@
 """
-B4CLI - Modern Python CLI Application Template
+b4cli - Modern Python CLI Application Template
 
 A modern Python CLI application template built with best practices including
 Typer for CLI, Rich for beautiful output, and Pydantic for data validation.

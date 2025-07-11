@@ -46,7 +46,7 @@ def main(
         help="Log format (pretty, json)",
     ),
 ) -> None:
-    """B4CLI - Modern Python CLI application template."""
+    """b4cli - Modern Python CLI application template."""
     # Map verbose count to log levels
     level_map = {0: "INFO", 1: "DEBUG", 2: "TRACE"}
 
@@ -75,13 +75,13 @@ def main(
 @app.command()
 def version() -> None:
     """Show version information."""
-    console.print("[bold blue]B4CLI[/bold blue] version [bold green]0.1.0[/bold green]")
+    console.print("[bold blue]b4cli[/bold blue] version [bold green]0.1.0[/bold green]")
 
 
 @app.command()
 def info() -> None:
     """Show application information."""
-    console.print("[bold blue]B4CLI[/bold blue] - Modern Python CLI Application Template")
+    console.print("[bold blue]b4cli[/bold blue] - Modern Python CLI Application Template")
     console.print("Built with [bold]Typer[/bold], [bold]Rich[/bold], and [bold]Pydantic[/bold]")
     console.print("Type [bold]--help[/bold] for available commands")
 

@@ -1,5 +1,5 @@
 """
-End-to-end CLI tests for B4CLI.
+End-to-end CLI tests for b4cli.
 
 This module tests the CLI functionality from a user perspective.
 """
@@ -18,7 +18,7 @@ class TestCLI:
         result = runner.invoke(app, ["--help"])
 
         assert result.exit_code == 0
-        assert "B4CLI - Modern Python CLI application template" in result.stdout
+        assert "b4cli - Modern Python CLI application template" in result.stdout
 
     def test_version_command(self):
         """Test version command."""
@@ -26,7 +26,7 @@ class TestCLI:
         result = runner.invoke(app, ["version"])
 
         assert result.exit_code == 0
-        assert "B4CLI" in result.stdout
+        assert "b4cli" in result.stdout
         assert "version" in result.stdout
         # Check for version components since Rich formatting breaks up "0.1.0"
         assert "0.1" in result.stdout
@@ -54,5 +54,5 @@ class TestCLI:
         result = runner.invoke(app, ["info"])
 
         assert result.exit_code == 0
-        assert "B4CLI" in result.stdout
+        assert "b4cli" in result.stdout
         assert "Modern Python CLI Application Template" in result.stdout

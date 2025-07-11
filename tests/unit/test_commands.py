@@ -44,7 +44,7 @@ class TestExampleCommands:
         result = self.runner.invoke(self.app, ["config"])
         assert result.exit_code == 0
         assert "Current Configuration" in result.stdout
-        assert "B4CLI" in result.stdout
+        assert "b4cli" in result.stdout
 
     def test_demo_error_command(self):
         """Test demo-error command handles errors properly."""

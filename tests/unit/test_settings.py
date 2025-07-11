@@ -53,7 +53,7 @@ class TestSettings:
     def test_default_settings(self):
         """Test default settings."""
         settings = Settings()
-        assert settings.app_name == "B4CLI"
+        assert settings.app_name == "b4cli"
         assert settings.debug is False
         assert settings.environment == "development"
         assert settings.color_output is True

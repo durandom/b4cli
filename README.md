@@ -1,4 +1,4 @@
-# B4CLI - Modern Python CLI Application Template
+# b4cli - Modern Python CLI Application Template
 
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
@@ -23,7 +23,7 @@ A modern Python CLI application template built with best practices, featuring Ty
 
 ## Overview
 
-B4CLI is a production-ready Python CLI application template that provides a solid foundation for building modern command-line tools. It incorporates industry best practices, modern Python features, and a comprehensive development environment.
+b4cli is a production-ready Python CLI application template that provides a solid foundation for building modern command-line tools. It incorporates industry best practices, modern Python features, and a comprehensive development environment.
 
 ## Key Features
 
@@ -394,15 +394,16 @@ After downloading the template files, rename everything with one simple command:
 # Set your CLI name
 NEW_NAME="mycli"
 
+# Download and extract the template, then rename it
 curl -L https://github.com/durandom/b4cli/archive/main.tar.gz | tar -xz
 mv b4cli-main $NEW_NAME && cd $NEW_NAME && git init
+
 # Rename everything in 3 commands
-find . -name "*b4cli*" -exec rename 's/b4cli/'$NEW_NAME'/g' {} + 2>/dev/null || \
 find . -name "*b4cli*" | while read f; do mv "$f" "${f//b4cli/$NEW_NAME}"; done
-find . -type f \( -name "*.py" -o -name "*.md" -o -name "*.toml" \) -exec sed -i "s/b4cli/$NEW_NAME/g" {} +
-uv sync --group dev && uv run $NEW_NAME --help
+find . -type f \( -name "*.py" -o -name "*.md" -o -name "*.toml" \) -exec sed -i '' "s/b4cli/$NEW_NAME/g" {} +
+uv sync --group dev
 ```
 
 ---
 
-**B4CLI** - A modern Python CLI template built with best practices ⚡
+**b4cli** - A modern Python CLI template built with best practices ⚡

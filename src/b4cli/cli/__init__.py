@@ -1,1 +1,1 @@
-"""CLI module for B4CLI."""
+"""CLI module for b4cli."""

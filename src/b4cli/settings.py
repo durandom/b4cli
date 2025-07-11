@@ -68,7 +68,7 @@ class Settings(BaseSettings):
     )
 
     # Application settings
-    app_name: str = "B4CLI"
+    app_name: str = "b4cli"
     debug: bool = False
     environment: str = "development"
 

@@ -1,5 +1,5 @@
 """
-Pytest configuration and fixtures for B4CLI tests.
+Pytest configuration and fixtures for b4cli tests.
 
 This module provides common fixtures and configuration for all tests.
 """
@@ -39,14 +39,14 @@ def configure_test_logging():
 
     # Log test session start
     logger.info("=" * 50)
-    logger.info("Starting B4CLI test session")
+    logger.info("Starting b4cli test session")
     logger.info("=" * 50)
 
     yield
 
     # Log test session end
     logger.info("=" * 50)
-    logger.info("B4CLI test session completed")
+    logger.info("b4cli test session completed")
     logger.info("=" * 50)
 
 

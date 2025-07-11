@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-B4CLI is a modern Python CLI application template built with best practices and production-ready features.
+b4cli is a modern Python CLI application template built with best practices and production-ready features.
 
 - **uv** for dependency management and virtual environments
 - **Typer** for CLI framework with Rich for beautiful output

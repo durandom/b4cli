@@ -104,7 +104,7 @@ class CommandRegistry:
     def create_main_app(self) -> typer.Typer:
         """Create main app with all registered commands."""
         app = typer.Typer(
-            help="B4CLI - Modern Python CLI application template",
+            help="b4cli - Modern Python CLI application template",
             add_completion=False,
             rich_markup_mode="rich",
         )
